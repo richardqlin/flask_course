@@ -27,12 +27,13 @@ def internal_server_error(e):
 def index():
 	name = None
 	form = NameForm()
+	context={}
 	if form.validate_on_submit():
 		name = form.name.data
 		form.name.data = ''
 		#alpha='abcdefghijklmnopqrstuvwsyx'
 		context={}
-		name=''.join(name.split())
+		#name=''.join(name.split())
 		for i in name:
 			print i,
 			count=name.count(i)
@@ -40,7 +41,6 @@ def index():
 				context[i]=count
 		print context
 	return render_template('index.html',form=form,name=name, context=context)
-
 
 
 @app.route('/user/<name>')
