@@ -31,15 +31,6 @@ def index():
 	if form.validate_on_submit():
 		name = form.name.data
 		form.name.data = ''
-		#alpha='abcdefghijklmnopqrstuvwsyx'
-		context={}
-		#name=''.join(name.split())
-		for i in name:
-			print i,
-			count=name.count(i)
-			if count>0:
-				context[i]=count
-		print context
 	return render_template('index.html',form=form,name=name, context=context)
 
 

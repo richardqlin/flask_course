@@ -5,7 +5,7 @@
 
 {{ wtf.quick_form(form) }}
 <div class="page-header">
-<h1>A string as {% if name %}{{ name }}{% else %}Stranger{% endif %} contains </h1>
+<h1>A string as {% if name %}<b>{{ name }}</b>{% else %}Stranger{% endif %} contains </h1>
 
 
 {% for k ,v in context.items() %}
